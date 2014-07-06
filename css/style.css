@@ -46,8 +46,8 @@ header {
 
 header h1 {
 	display: block;
-	width: 105px;
-	height: 34px;
+	width: 464px;
+	height: 41px;
 	background: url('../img/logo-guia.png') no-repeat;
 	text-indent: -90000000px;
 	margin: 0 auto;
@@ -68,7 +68,7 @@ header input{
 
 .banner-slim{
 	background-color: #00b09d;
-	margin: 40px 0 0 0;
+	margin: 40px 10px;
 	padding: 10px;
 }
 
