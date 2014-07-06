@@ -1,0 +1,131 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,900);
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+	background: #EEE;
+	color: #2E3444;
+	font-size: 100%;
+	line-height: 1.25;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+a {
+	color: #FF2A48;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover, a:focus {
+	color: #2E3444;
+}
+
+header {
+	margin: 0 auto;
+	padding: 2em;
+	text-align: center;
+	background-color: #f6f6f6;
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(50, 50, 50, 0.41);
+	-moz-box-shadow:    0px 1px 4px 0px rgba(50, 50, 50, 0.41);
+	box-shadow:         0px 1px 4px 0px rgba(50, 50, 50, 0.41);
+	position: relative;
+}
+
+header h1 {
+	display: block;
+	width: 105px;
+	height: 34px;
+	background: url('../img/logo-guia.png') no-repeat;
+	text-indent: -90000000px;
+	margin: 0 auto;
+}
+
+header input{
+	padding: 10px;
+	font-size: .9em;
+	width: 20%;
+	background:#e6e5e5 url('../img/icon-search.png') no-repeat 99% center;
+	float: left;
+	position: absolute;
+	top:0px;
+	right: 0;
+	border: none;
+
+}
+
+.banner-slim{
+	background-color: #00b09d;
+	margin: 40px 0 0 0;
+	padding: 10px;
+}
+
+.banner-slim h2{
+	margin: 0;
+	text-align: left;
+}
+
+section {
+	padding: 1em;
+	text-align: center;
+}
+
+.related {
+	padding: 15em 0 3em;
+	clear: both;
+}
+
+.related p {
+	font-size: 1.5em;
+}
+
+.related > a {
+	border: 1px solid #2E3444;
+	display: inline-block;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 25px;
+	color: #2E3444;
+}
+
+.related a:hover {
+	border-color: #FF2A48;
+	color: #FF2A48;
+}
+
+.related a img {
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.related a:hover img,
+.related a:active img {
+	opacity: 1;
+}
+
+.related a h3 {
+	margin: 0;
+	padding: 0.5em 0 0.3em;
+	max-width: 300px;
+	text-align: left;
+}
+
+@media screen and (max-width: 25em) {
+
+	.codrops-icon span {
+		display: none;
+	}
+
+}
