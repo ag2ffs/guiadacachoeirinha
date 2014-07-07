@@ -46,9 +46,9 @@ header {
 
 header h1 {
 	display: block;
-	width: 367px;
-	height: 31px;
-	background: url('../img/logo-guia.png') no-repeat;
+	width: 429px;
+	height: 36px;
+	background: url('../img/logo-guiadacachoeirinha.png') no-repeat;
 	text-indent: -90000000px;
 	margin: 0 auto;
 }
@@ -75,6 +75,17 @@ header input{
 .banner-slim h2{
 	margin: 0;
 	text-align: left;
+}
+
+.banner-slim h2 span{
+	float: right;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: normal;
+	background-color: #faa61a;
+	padding: 5px;
+	display: block;
+	margin: 3px 0 0 0;
 }
 
 section {
