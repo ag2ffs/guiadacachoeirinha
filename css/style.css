@@ -35,7 +35,7 @@ a:hover, a:focus {
 
 header {
 	margin: 0 auto;
-	padding: 2em;
+	padding: 1.6em;
 	text-align: center;
 	background-color: #f6f6f6;
 	-webkit-box-shadow: 0px 1px 4px 0px rgba(50, 50, 50, 0.41);
@@ -44,13 +44,19 @@ header {
 	position: relative;
 }
 
-header h1 {
+header h1{
+	margin:0;
+}
+
+header h1 a{
 	display: block;
-	width: 429px;
-	height: 36px;
+	width: 310px;
+	height: 25px;
 	background: url('../img/logo-guiadacachoeirinha.png') no-repeat;
 	text-indent: -90000000px;
 	margin: 0 auto;
+	overflow: hidden;
+	outline: none;
 }
 
 header input{
@@ -60,10 +66,20 @@ header input{
 	background:#e6e5e5 url('../img/icon-search.png') no-repeat 99% center;
 	float: left;
 	position: absolute;
-	top:0px;
+	top:-5px;
 	right: 0;
 	border: none;
 
+}
+
+header a.anuncie{
+	position: absolute;
+	top: -3px;
+	left: 0;
+	padding: 6px 20px;
+	background-color: #7dc226;
+	color: #FFF;
+	font-weight: bold;
 }
 
 .banner-slim{
