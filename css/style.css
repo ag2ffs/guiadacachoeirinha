@@ -82,26 +82,23 @@ header a.anuncie{
 	font-weight: bold;
 }
 
+h2{
+	font-weight: 200;
+	font-size: 2.6em;
+	color: #2a82ca;
+}
+
+h2 span{
+	color: #e60060;
+}
+
+p{
+	font-weight: 400;
+}
+
+
 .banner-slim{
-	background-color: #00b09d;
 	margin: 40px 10px;
-	padding: 10px;
-}
-
-.banner-slim h2{
-	margin: 0;
-	text-align: left;
-}
-
-.banner-slim h2 span{
-	float: right;
-	color: #FFF;
-	font-size: 12px;
-	font-weight: normal;
-	background-color: #faa61a;
-	padding: 5px;
-	display: block;
-	margin: 3px 0 0 0;
 }
 
 section {
@@ -155,4 +152,32 @@ section {
 		display: none;
 	}
 
+}
+
+.grid-wrap.format{
+	text-align: left;
+	padding: 0 2em;
+}
+
+.format h3{
+	font-size: 2em;
+	font-weight: 300;
+}
+
+.format h4{
+	font-size: 1.6em;
+	font-weight: 300;
+	margin: 0 0 20px 0;
+}
+
+.format h5{
+	font-size: 1.2em;
+	font-weight: 400;
+	margin: 10px 0 0 0;
+}
+
+.format-details{
+	background-color: #FFF;
+	margin: 0 0 20px 0;
+	padding: 1em;
 }
