@@ -1,8 +1,15 @@
-<div class="container">
+<header>
+	<section class="grid-wrap">
+		<h1 class="logo"><a href="/"title="Encontre tudo o que você precisa no bairro da Vila Nova Cachoeirinha.">O Guia da Vila Nova Cachoeirinha</a></h1>
+		<a class="anuncie" href="anuncie.html" title="Anuncie">Anuncie</a>
+	</section>
+</header>
+<div class="container detail">
 	<div ng-controller="OrdersController">
 		<div class="topo" style="background:url('app/img/ads/{{ad.bannerfull}}') no-repeat center center; background-size:cover"></div>
+		<h2>{{ ad.name }}</h2>
 		<div class="details">
-			<h2>{{ ad.name }}</h2>
+			<h3>Informações</h3>
 			<p class="icon icon-build">{{ad.description}}</p>
 			<p class="icon icon-phone">{{ad.phone}}</p>
 			<p class="icon icon-time">{{ad.time}}</p>

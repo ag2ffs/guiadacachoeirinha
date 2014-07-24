@@ -184,7 +184,14 @@ section {
 }
 
 .details{
-	padding: 0 80px 40px 80px;
+	padding: 40px 80px;
+}
+
+.detail h2{
+	background-color: #FFF;
+	margin: 0;
+	padding: 30px 80px;
+	border-bottom: #D1D1D1 solid 1px;
 }
 
 p.icon{
