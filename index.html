@@ -1,64 +1,120 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="adscatApp">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>O Guia da Vila Nova Cachoeirinha</title>
-		<meta name="description" content="Encontre tudo o que você precisa no bairro da Vila Nova Cachoeirinha." />
-		<meta name="keywords" content="guia, cachoeirinha" />
-		<meta name="author" content="" />
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
+<!doctype html>
+<html lang="en" ng-app="customersApp">
+<head>
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>O Guia da Vila Nova Cachoeirinha</title>
+    <meta name="description" content="Encontre tudo o que você precisa no bairro da Vila Nova Cachoeirinha." />
+    <meta name="keywords" content="guia, cachoeirinha" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="app/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="app/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="app/css/component.css" />
+    
+    <script src="app/js/modernizr.custom.js"></script>
+    <script src="app/js/angular.min.js"></script>
+    <script src="app/js/angular-router.js"></script>
+    <script src="app/js/angular-resource.js"></script>
+</head>
+<body>
 
-	    <script src="js/angular.js"></script>
-	    <script src="js/angular-route.js"></script>
-	    <script src="js/controllers.js"></script>
+  <header>
+    <section class="grid-wrap">
+      <h1 class="logo"><a href="/"title="Encontre tudo o que você precisa no bairro da Vila Nova Cachoeirinha.">O Guia da Vila Nova Cachoeirinha</a></h1>
+      <input placeholder="Exemplo: Sapataria" ng-model="search">
+      <a class="anuncie" href="anuncie.html" title="Anuncie">Anuncie</a>
+    </section>
+  </header>
+  
+  <div ng-view></div>
 
-	</head>
-	<body >
-		<div class="container" ng-controller="AdsListCtrl">
-			<header>
-				<section class="grid-wrap">
-					<h1 class="logo"><a href="/"title="Encontre tudo o que você precisa no bairro da Vila Nova Cachoeirinha.">O Guia da Vila Nova Cachoeirinha</a></h1>
-					<input placeholder="Exemplo: Sapataria" ng-model="query">
-					<a class="anuncie" href="anuncie.html" title="Anuncie">Anuncie</a>
-				</section>
-			</header>
-			<section class="grid-wrap">
-				<div class="banner-slim">
-					<img src="img/banner-slim-demo.jpg">
-				</div>
-			</section>
-			<section class="grid-wrap">
-				<ul class="grid swipe-down" id="grid">
-					<li ng-repeat="ad in ads | filter:query">
-						<a href="#" title="{{ad.name}}">
-							<img src="img/ads/{{ad.image}}">
-							<h3>{{ad.name}}<span>11 2231.2425</span></h3>
-							<p>{{ad.mapa}}</p>
-						</a>
-					</li>
-				</ul>
-			</section>
-		</div>
-		<script src="js/masonry.pkgd.min.js"></script>
-		<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script src="js/classie.js"></script>
-		<script src="js/colorfinder-1.1.js"></script>
-		<script src="js/gridScrollFx.js"></script>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <script>
+    var app = angular.module('customersApp' , ['ngRoute']);
 
-		  ga('create', 'UA-52643707-1', 'auto');
-		  ga('send', 'pageview');
+    app.config(function($routeProvider){
+      $routeProvider.when('/',
+      {
+        controller: 'CustomersController',
+        templateUrl: 'app/views/list.html'
+      })
+      .when('/detail/:id',
+      {
+        controller: 'OrdersController',
+        templateUrl: 'app/views/detail.html'
+      })
+    });
 
-		</script>
-	</body>
+    app.controller('OrdersController', function($scope , $routeParams){
+      $scope.ads = $scope.ads = [
+      {
+        'id':'01',
+        'name': 'Bolo da Lourdes',
+        'description': 'Bolos e Salgados para festas. Ligue e consulte nossos preços.',
+        'phone': '11 3985-3345',
+        'address': 'Rua 22 de Agosto, 142',
+        'time': 'De segunda a sexta das 10:00hs as 17:00hs',
+        'site': 'wwww.bolodalourdes.com.br',
+        'banner': 'bolo-da-lourdes.jpg',
+        'bannerfull': 'bolo-da-lourdes-full.jpg',
+      },
+      {
+        'id':'02',
+        'name': 'Vanbikes',
+        'description': 'Especialista em Speed e Mountain Bikes. Consertos em geral.',
+        'phone': '11 3985-9987',
+        'address': 'Av. Parada Pinto, 1000',
+        'time': 'De segunda a sabádo das 08:00hs as 18:00hs',
+        'site': 'www.vanbikes.com.br',
+        'banner': 'roda-bike.jpg',
+        'bannerfull': 'roda-bike-full.jpg',
+      },
+    ];
+      $scope.ad = $scope.ads[$routeParams.id-1];
+    });
+
+
+    app.controller('CustomersController', function($scope){
+      $scope.ads = $scope.ads = [
+      {
+        'id':'01',
+        'name': 'Bolo da Lourdes',
+        'description': 'Bolos e Salgados para festas. Ligue e consulte nossos preços.',
+        'phone': '11 3985-3345',
+        'address': 'Rua 22 de Agosto, 142',
+        'time': 'De segunda a sexta das 10:00hs as 17:00hs',
+        'site': 'wwww.bolodalourdes.com.br',
+        'banner': 'bolo-da-lourdes.jpg',
+        'bannerfull': 'bolo-da-lourdes-full.jpg',
+      },
+      {
+        'id':'02',
+        'name': 'Vanbikes',
+        'description': 'Especialista em Speed e Mountain Bikes. Consertos em geral.',
+        'phone': '11 3985-9987',
+        'address': 'Av. Parada Pinto, 1000',
+        'time': 'De segunda a sabádo das 08:00hs as 18:00hs',
+        'site': 'www.vanbikes.com.br',
+        'banner': 'roda-bike.jpg',
+        'bannerfull': 'roda-bike-full.jpg',
+        'maps': '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=Vila+Nova+Cachoeirinha,+S%C3%A3o+Paulo,+Brasil&amp;aq=0&amp;oq=Vila+Nova&amp;sll=-23.46612,-46.657863&amp;sspn=0.01181,0.019269&amp;g=cep+02617+000&amp;ie=UTF8&amp;hq=&amp;hnear=Vila+Nova+Cachoeirinha,+S%C3%A3o+Paulo,+Rep%C3%BAblica+Federativa+do+Brasil&amp;ll=-23.472296,-46.659671&amp;spn=0.02535,0.038538&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=pt-BR&amp;geocode=&amp;q=Vila+Nova+Cachoeirinha,+S%C3%A3o+Paulo,+Brasil&amp;aq=0&amp;oq=Vila+Nova&amp;sll=-23.46612,-46.657863&amp;sspn=0.01181,0.019269&amp;g=cep+02617+000&amp;ie=UTF8&amp;hq=&amp;hnear=Vila+Nova+Cachoeirinha,+S%C3%A3o+Paulo,+Rep%C3%BAblica+Federativa+do+Brasil&amp;ll=-23.472296,-46.659671&amp;spn=0.02535,0.038538&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">Exibir mapa ampliado</a></small>',
+      },
+    ];
+
+    });
+  </script>
+
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52643707-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
 </html>

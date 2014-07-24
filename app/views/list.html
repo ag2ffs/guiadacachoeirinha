@@ -1,0 +1,12 @@
+<div class="container" ng-controller="CustomersController">
+	<section class="grid-wrap">
+		<ul class="grid swipe-down" id="grid">
+			<li ng-repeat="ad in ads | filter:search">
+				<a href="#/detail/{{ ad.id }}" title="{{ad.name}}">
+					<img src="app/img/ads/{{ad.banner}}">
+					<h3>{{ad.name}}<span>{{ad.phone}}</span></h3>
+				</a>
+			</li>
+		</ul>
+	</section>
+</div>
