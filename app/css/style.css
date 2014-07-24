@@ -207,3 +207,5 @@ p.icon-address{background-position: 0 -136px}
 p.icon-phone{background-position: 0 -27px}
 p.icon-time{background-position: 0 -60px}
 p.icon-site{background-position: 0 -97px}
+
+.angular-google-map-container { height: 400px; }

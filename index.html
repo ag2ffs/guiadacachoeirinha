@@ -14,88 +14,21 @@
     <link rel="stylesheet" type="text/css" href="app/css/style.css" />
     <link rel="stylesheet" type="text/css" href="app/css/component.css" />
     
-    <script src="app/js/modernizr.custom.js"></script>
     <script src="app/js/angular.min.js"></script>
     <script src="app/js/angular-router.js"></script>
     <script src="app/js/angular-resource.js"></script>
+
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src="app/js/lodash.js"></script>
+    <script src="app/js/angular-maps.min.js"></script>
+    <script src="app/js/app.js"></script>
 </head>
 <body>
   
   <div ng-view></div>
 
   <script>
-    var app = angular.module('customersApp' , ['ngRoute']);
-
-    app.config(function($routeProvider){
-      $routeProvider.when('/',
-      {
-        controller: 'CustomersController',
-        templateUrl: 'app/views/list.html'
-      })
-      .when('/detail/:id',
-      {
-        controller: 'OrdersController',
-        templateUrl: 'app/views/detail.html'
-      })
-    });
-
-    app.controller('OrdersController', function($scope , $routeParams){
-      $scope.ads = $scope.ads = [
-      {
-        'id':'01',
-        'name': 'Bolo da Lourdes',
-        'description': 'Bolos e Salgados para festas. Ligue e consulte nossos preços.',
-        'phone': '11 3985-3345',
-        'address': 'Rua 22 de Agosto, 142',
-        'time': 'De segunda a sexta das 10:00hs as 17:00hs',
-        'site': 'wwww.bolodalourdes.com.br',
-        'banner': 'bolo-da-lourdes.jpg',
-        'bannerfull': 'bolo-da-lourdes-full.jpg',
-      },
-      {
-        'id':'02',
-        'name': 'Vanbikes',
-        'description': 'Especialista em Speed e Mountain Bikes. Consertos em geral.',
-        'phone': '11 3985-9987',
-        'address': 'Av. Parada Pinto, 1000',
-        'time': 'De segunda a sabádo das 08:00hs as 18:00hs',
-        'site': 'www.vanbikes.com.br',
-        'banner': 'roda-bike.jpg',
-        'bannerfull': 'roda-bike-full.jpg',
-      },
-    ];
-      $scope.ad = $scope.ads[$routeParams.id-1];
-    });
-
-
-    app.controller('CustomersController', function($scope){
-      $scope.ads = $scope.ads = [
-      {
-        'id':'01',
-        'name': 'Bolo da Lourdes',
-        'description': 'Bolos e Salgados para festas. Ligue e consulte nossos preços.',
-        'phone': '11 3985-3345',
-        'address': 'Rua 22 de Agosto, 142',
-        'time': 'De segunda a sexta das 10:00hs as 17:00hs',
-        'site': 'wwww.bolodalourdes.com.br',
-        'banner': 'bolo-da-lourdes.jpg',
-        'bannerfull': 'bolo-da-lourdes-full.jpg',
-      },
-      {
-        'id':'02',
-        'name': 'Vanbikes',
-        'description': 'Especialista em Speed e Mountain Bikes. Consertos em geral.',
-        'phone': '11 3985-9987',
-        'address': 'Av. Parada Pinto, 1000',
-        'time': 'De segunda a sabádo das 08:00hs as 18:00hs',
-        'site': 'www.vanbikes.com.br',
-        'banner': 'roda-bike.jpg',
-        'bannerfull': 'roda-bike-full.jpg',
-        'maps': '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=Vila+Nova+Cachoeirinha,+S%C3%A3o+Paulo,+Brasil&amp;aq=0&amp;oq=Vila+Nova&amp;sll=-23.46612,-46.657863&amp;sspn=0.01181,0.019269&amp;g=cep+02617+000&amp;ie=UTF8&amp;hq=&amp;hnear=Vila+Nova+Cachoeirinha,+S%C3%A3o+Paulo,+Rep%C3%BAblica+Federativa+do+Brasil&amp;ll=-23.472296,-46.659671&amp;spn=0.02535,0.038538&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=pt-BR&amp;geocode=&amp;q=Vila+Nova+Cachoeirinha,+S%C3%A3o+Paulo,+Brasil&amp;aq=0&amp;oq=Vila+Nova&amp;sll=-23.46612,-46.657863&amp;sspn=0.01181,0.019269&amp;g=cep+02617+000&amp;ie=UTF8&amp;hq=&amp;hnear=Vila+Nova+Cachoeirinha,+S%C3%A3o+Paulo,+Rep%C3%BAblica+Federativa+do+Brasil&amp;ll=-23.472296,-46.659671&amp;spn=0.02535,0.038538&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">Exibir mapa ampliado</a></small>',
-      },
-    ];
-
-    });
+    
   </script>
 
   <script>
