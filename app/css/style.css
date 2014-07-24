@@ -202,7 +202,8 @@ p.icon{
 	margin: 5px;
 }
 
-p.icon-build{background-position: 0 10px}
-p.icon-phone{background-position: 0 -36px}
-p.icon-time{background-position: 0 -80px}
-p.icon-site{background-position: 0 -125px}
+p.icon-build{background-position: 0 15px}
+p.icon-address{background-position: 0 -136px}
+p.icon-phone{background-position: 0 -27px}
+p.icon-time{background-position: 0 -60px}
+p.icon-site{background-position: 0 -97px}
